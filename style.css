@@ -1,18 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #27272a;
+    color:lightpink;
+    font-family: "Sono", sans-serif;
+    padding: 40px;
+}
+
+.header {
+    margin-bottom: 40px;
+}
+
+.fact-form {
+    background-color: #52525b;
+    margin-bottom: 40px;
+    padding: 16px, 40px;
+}
+
 h1 {
     font-size: 42px;
     text-transform: uppercase;
-    text-align: center;
+    font-family: "Coiny", sans-serif;
 }
 
-p {
+.fact {
     font-size: 20px;
     line-height: 1.4;
-    font-family: sans-serif;
+    background-color: #52525b;
+    margin-bottom: 16px;
+    padding: 16px, 24px;
+
 }
 
-span {
+.tag {
     text-transform: uppercase;
     font-size: 14px;
+    font-family: "Coiny", sans-serif;
 }
 
 ul {
