@@ -13,10 +13,19 @@ body {
 
 .header {
     margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
 }
 
+.logo{
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
 .fact-form {
-    background-color: #52525b;
+    background-color: #44403c;
     margin-bottom: 40px;
     padding: 16px, 40px;
 }
@@ -25,6 +34,10 @@ h1 {
     font-size: 42px;
     text-transform: uppercase;
     font-family: "Coiny", sans-serif;
+    background-color: purple;
+    line-height: 1;
+    margin-top: 6px;
+    margin-left: 20px;
 }
 
 .fact {
@@ -33,13 +46,16 @@ h1 {
     background-color: #52525b;
     margin-bottom: 16px;
     padding: 16px, 24px;
-
+    text-align: center;
 }
 
 .tag {
     text-transform: uppercase;
     font-size: 14px;
     font-family: "Coiny", sans-serif;
+    padding-top: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 ul {
