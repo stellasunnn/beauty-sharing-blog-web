@@ -5,10 +5,16 @@
 }
 
 body {
-    background-color: #27272a;
+    background-color: #292524;
     color:lightpink;
     font-family: "Sono", sans-serif;
-    padding: 40px;
+    padding: 48px 64px;
+
+}
+/*LAYOUT*/
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .header {
@@ -18,23 +24,37 @@ body {
     justify-content: space-between; 
 }
 
-.logo{
-    background-color: blue;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
+
 .fact-form {
     background-color: #44403c;
     margin-bottom: 40px;
     padding: 16px, 40px;
 }
 
+.main {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 48px;
+}
+
+/*ELEMENTS*/
+
+.logo{
+    /* background-color: blue; */
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo img{
+    width: 68px;
+    height: 68px;
+}
+
 h1 {
     font-size: 42px;
     text-transform: uppercase;
     font-family: "Coiny", sans-serif;
-    background-color: purple;
     line-height: 1;
     margin-top: 6px;
     margin-left: 20px;
@@ -43,10 +63,15 @@ h1 {
 .fact {
     font-size: 20px;
     line-height: 1.4;
-    background-color: #52525b;
+    background-color: #44403c;
     margin-bottom: 16px;
     padding: 16px, 24px;
-    text-align: center;
+    letter-spacing: -1px;
+
+    display: flex;
+    align-items: center;
+    
+    gap: 24px;
 }
 
 .tag {
@@ -58,6 +83,11 @@ h1 {
     padding-right: 10px;
 }
 
+.vote-buttons {
+    margin-left: auto;
+}
+
 ul {
     list-style: none;
 }
+

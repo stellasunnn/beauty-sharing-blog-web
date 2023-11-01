@@ -12,6 +12,7 @@
     <title>Today I Learned!</title>
   </head>
   <body>
+    <div class="container">
     <header class="header">
       <div class="logo">
 
@@ -27,6 +28,14 @@
 
     </header>
 
+    <!-- <div class = "test">
+        <p class = "child">1</p>
+        <p class = "child">2</p>
+        <p class = "child">3</p>
+        <p class = "child">4</p>
+        <p class = "child">5</p>
+    </div> -->
+
     <form>
       <input type="text" placeholder="Share a fact with the world..." />
       <span>200</span>
@@ -40,7 +49,7 @@
       <button>Post</button>
     </form>
 
-    <main>
+    <main class = "main">
       <aside>
         <ul>
           <li><button>All</button></li>
@@ -58,11 +67,14 @@
           <li class="fact">
             <p>
               React is being developed by Meta (formerly facebook)
-              <a href="https://opensource.fb.com/" target="_blank">(Source)</a>
-              <span class="tag" 
-              style = "background-color: #3b82f6;">#technology#</span>
+              <a href="https://opensource.fb.com/" 
+              target="_blank">(Source)</a>
             </p>
-            <div>
+              <span class="tag" 
+              style = "background-color: #3b82f6;"
+              >#technology#</span>
+           
+            <div class="vote-buttons">
               <button>👍 <strong>24</strong></button>
               <button>🤯 <strong>9</strong></button>
               <button>⛔️ <strong>4</strong></button>
@@ -81,7 +93,7 @@
               <span class="tag"
               style = "background-color: #eab308;">#society#</span>
             </p>
-            <div>
+            <div class="vote-buttons">
               <button>👍 <strong>11</strong></button>
               <button>🤯 <strong>2</strong></button>
               <button>⛔️ <strong>0</strong></button>
@@ -90,5 +102,6 @@
         </ul>
       </section>
     </main>
+  </div>
   </body>
 </html>
