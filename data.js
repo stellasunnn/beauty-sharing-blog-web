@@ -1,4 +1,3 @@
-
 const CATEGORIES = [
   { name: "technology", color: "#3b82f6" },
   { name: "science", color: "#16a34a" },
@@ -45,5 +44,7 @@ const initialFacts = [
 ];
 
 // LINK TO APP SAMPLE DATA: https://docs.google.com/spreadsheets/d/1eeldcA_OwP4DHYEvjG0kDe0cRys-cDPhc_E9P9G1e3I/edit#gid=0
-
+// curl 'https://sajzvmfcvgcysyuuxmdn.supabase.co/rest/v1/facts' \
+// -H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNhanp2bWZjdmdjeXN5dXV4bWRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTkzODc4ODcsImV4cCI6MjAxNDk2Mzg4N30.w3oSf7BgjfOD-kvb62Cqorf1oWnQjUiIrtm-9xIG36s" \
+// -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNhanp2bWZjdmdjeXN5dXV4bWRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTkzODc4ODcsImV4cCI6MjAxNDk2Mzg4N30.w3oSf7BgjfOD-kvb62Cqorf1oWnQjUiIrtm-9xIG36s"
 // 👍 🤯 ⛔️
