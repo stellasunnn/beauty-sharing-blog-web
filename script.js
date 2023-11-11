@@ -94,6 +94,7 @@ const str = `The current fact is "${text}". It is ${calcFactAge(
 console.log(str);
 */
 
+
 const fact = ["Lisbon is the captical of Portugal", 2015, true];
 console.log(fact);
 console.log(fact[2]);
@@ -105,3 +106,23 @@ console.log(createdIn);
 
 const newFact = [...fact, "society"];
 console.log(newFact);
+
+const factObj = {
+  text: "Lisbon is the captical of Portugal",
+  category: 'society',
+  createdIn: 2015,
+  isCorrect: true,
+  createSummary: function () {
+    return `The fact "${
+      this.text
+      }" is from the category ${this.category.
+        toUpperCase()}`;
+  },
+};
+
+console.log(factObj.text);
+console.log(factObj["text"]);
+
+const { catagory, isCorrect } = factObj;
+console.log(catagory);
+console.log(factObj.createSummary());
