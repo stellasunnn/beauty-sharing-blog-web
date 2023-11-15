@@ -35,6 +35,17 @@ const initialFacts = [
   },
 ];
 
+function Counter() {
+  const [count, setCount] = useState(0);
+  return (
+  <div>
+    <span style={{fontSize: '40px'}}>{count}</span>
+    <button className='btn btn-large' onClick = {
+      () => setCount((c) => c + 1)
+    }>+1</button>
+  </div>
+  );
+}
 
 function App() {
   return (
@@ -48,7 +59,7 @@ function App() {
         width="68"
         alt="Today I Learned Logo"
       />
-      <h1>Today I Learned</h1>
+      <h1>{appTitle}</h1>
     </div>
     
 
@@ -57,7 +68,7 @@ function App() {
   </header>
     
     <NewfactForm />
-
+    <Counter />
       <main class = "main">
       <FactList />
       <CategoryFilter />
