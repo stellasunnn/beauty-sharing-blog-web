@@ -51,31 +51,15 @@ function Counter() {
 function App() {
   const [showForm, setShowForm] = useState(false);
   
-  const appTitle = "Today I Learned";
+  
   return (
     <>
-    {/* HEADER */}
-    <header className="header">
-    <div className="logo">
-      <img
-        src="logo.png"
-        height="68"
-        width="68"
-        alt="Today I Learned Logo"
-      />
-      <h1>{appTitle}</h1>
-    </div>
+    <Header showForm = {showForm} setShowForm = {setShowForm}/>
     
-
-    <button className="btn btn-large btn-open"
-    onClick = {() => setShowForm((show)=> !show)}>Share a fact</button>
-
-  </header>
     
-   
     {showForm ? <NewfactForm /> : null }
       
-      <main class = "main">
+      <main className = "main">
       <FactList />
       <CategoryFilter />
   </main>
@@ -83,8 +67,32 @@ function App() {
   );
 }
 
+function Header({showForm, setShowForm}) {
+  const appTitle = "Today I Learned";
+  return (
+   <header className="header">
+  <div className="logo">
+    <img
+      src="logo.png"
+      height="68"
+      width="68"
+      alt="Today I Learned Logo"
+    />
+    <h1>{appTitle}</h1>
+  </div>
+  
+
+  <button className="btn btn-large btn-open"
+  onClick = {() => setShowForm((show)=> !show)}>
+    {showForm ? "Close" : "Share a fact"}
+    </button>
+
+</header>
+  )
+}
+
 function NewfactForm(){
-  return <form>Fact form</form>;
+  return <form className="fact-form">Fact form</form>;
 }
 const CATEGORIES = [
   { name: "technology", color: "#3b82f6" },
