@@ -91,9 +91,6 @@ function Header({showForm, setShowForm}) {
   )
 }
 
-function NewfactForm(){
-  return <form className="fact-form">Fact form</form>;
-}
 const CATEGORIES = [
   { name: "technology", color: "#3b82f6" },
   { name: "science", color: "#16a34a" },
@@ -104,6 +101,39 @@ const CATEGORIES = [
   { name: "history", color: "#f97316" },
   { name: "news", color: "#8b5cf6" },
 ];
+
+function NewfactForm(){
+  const [text, setText] = useState("");
+  const [source, setSource] = useState("");
+  const [category, setCategory] = useState("society");
+  const textLength = text.length;
+
+  function handleSubmit(e){
+    e.preventDefault();
+    
+  }
+  return (<form className="fact-form" onSubmit=
+  {handleSubmit}>
+    <input type="text" placeholder="Share a fact with the world..." 
+  value = {test}
+  onChange = {(e) => setText(e.target.value)}
+  />
+  <span>{200 - textLength}</span>
+  <input type="text" placeholder="Trustworthy source..." 
+  onChange = {(e) => setSource(e.target.value)} />
+  <select value = {category}
+  onChange = {(e) => setSource(e.target.value)}
+  >
+    <option value="">Choose category:</option>
+    {CATEGORIES.map((cat) => (
+    <option key = {cat.name} value ={cat.name}>
+      {cat.name.toUpperCase()}
+      </option>
+    ))}
+  </select>
+  <button className="btn btn-large">Post</button></form>);
+}
+
 
 function CategoryFilter() {
   return <aside><ul>
