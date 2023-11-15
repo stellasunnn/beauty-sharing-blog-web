@@ -87,31 +87,39 @@ function FactList() {
   // TEMPORARY
   const facts = initialFacts;
   return <section><ul className = "facts-list">{
-    facts.map((fact) =>(
-      <li key={fact.id}className="fact">
-      <p>
-        {fact.text}
-        <a
-          className="source"
-          href={fact.source}
-          target="_blank"
-          >
-            (Source)
-          </a>
-      </p>
-      <span clasName="tag" style = {{
-      backgroundColor: CATEGORIES.find((cat) => cat.name === fact.category).color}}>
-        {fact.category}
-        </span>
-
-      <div className="vote-buttons">
-        <button>👍 {fact.votesInteresting}</button>
-        <button>🤯 {fact.votesMindblowing}</button>
-        <button>⛔️ {fact.votesFalse}</button>
-      </div>
-    </li>
-  ))}
+    facts.map((fact) => (
+    <Fact key={fact.id} fact={fact} />
+    ))}
     </ul>
+    <p>There are {facts.length} facts in the database. Add your own!</p>
   </section>;
+}
+
+// Fact(fact)
+
+function Fact({fact}) {
+ 
+  return <li className="fact">
+  <p>
+    {fact.text}
+    <a
+      className="source"
+      href={fact.source}
+      target="_blank"
+      >
+        (Source)
+      </a>
+  </p>
+  <span clasName="tag" style = {{
+  backgroundColor: CATEGORIES.find((cat) => cat.name === fact.category).color}}>
+    {fact.category}
+    </span>
+
+  <div className="vote-buttons">
+    <button>👍 {fact.votesInteresting}</button>
+    <button>🤯 {fact.votesMindblowing}</button>
+    <button>⛔️ {fact.votesFalse}</button>
+  </div>
+</li>
 }
 export default App;
