@@ -1,6 +1,4 @@
 import './style.css';
-import React, { useState } from 'react';
-
 
 const initialFacts = [
   {
@@ -134,7 +132,6 @@ function NewfactForm(){
   <button className="btn btn-large">Post</button></form>);
 }
 
-
 function CategoryFilter() {
   return <aside><ul>
      <li className="category">
@@ -152,8 +149,6 @@ function CategoryFilter() {
           </button>
         </li>
       ))}
-
-      
       </ul>
     </aside>;
 }
