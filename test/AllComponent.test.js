@@ -29,7 +29,7 @@ test("renders header with title and button", () => {
   const setShowForm = jest.fn();
   render(<Header showForm={false} setShowForm={setShowForm} />);
 
-  expect(screen.getByText(/Today I Learned/i)).toBeInTheDocument();
+  expect(screen.getByText(/Share And Rate/i)).toBeInTheDocument();
   fireEvent.click(screen.getByText(/Share a fact/i));
   expect(setShowForm).toHaveBeenCalled();
 });
