@@ -11,6 +11,19 @@ import CategoryFilter from "../src/CategoryFilter";
 import FactList from "../src/FactList";
 import Fact from "../src/Fact";
 import Loader from "../src/Loader";
+import supabase from '../src/supabase';
+
+describe('Supabase Tests', () => {
+  it('Should connect to Supabase and fetch data', async () => {
+    const { data, error } = await supabase.from('facts').select('*');
+
+    expect(error).toBeNull();
+    expect(data).toBeDefined();
+    expect(data.length).toBeGreaterThan(0);
+  });
+
+  // Add more tests as needed
+});
 
 test("renders header with title and button", () => {
   const setShowForm = jest.fn();
