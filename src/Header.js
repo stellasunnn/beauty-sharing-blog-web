@@ -1,7 +1,7 @@
 import React from "react";
 
 function Header({ showForm, setShowForm }) {
-  const appTitle = "Today I Learned";
+  const appTitle = "Share and Rate!";
   return (
     <header className="header">
       <div className="logo">
@@ -11,7 +11,8 @@ function Header({ showForm, setShowForm }) {
 
       <button
         className="btn btn-large btn-open"
-        onClick={() => setShowForm((show) => !show)}>
+        onClick={() => setShowForm((show) => !show)}
+      >
         {showForm ? "Close" : "Share a fact"}
       </button>
     </header>
