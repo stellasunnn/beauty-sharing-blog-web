@@ -63,7 +63,7 @@ test("renders list of facts", () => {
   expect(screen.getByText(/Fact 1/i)).toBeInTheDocument();
 });
 
-test("renders fact and handles votes", () => {
+test("renders fact and handles votesInteresting", () => {
   const fact = {
     id: 1,
     text: "Fact 1",
@@ -74,6 +74,36 @@ test("renders fact and handles votes", () => {
   render(<Fact fact={fact} setFacts={setFacts} />);
 
   const voteButton = screen.getByText(/👍 10/i);
+  fireEvent.click(voteButton);
+  // Assert the vote handling logic here
+});
+
+test("renders fact and handles votesMindblowing", () => {
+  const fact = {
+    id: 1,
+    text: "Fact 1",
+    category: "technology",
+    votesMindblowing: 19,
+  };
+  const setFacts = jest.fn();
+  render(<Fact fact={fact} setFacts={setFacts} />);
+
+  const voteButton = screen.getByText(/🤯 19/i);
+  fireEvent.click(voteButton);
+  // Assert the vote handling logic here
+});
+
+test("renders fact and handles votesFalse", () => {
+  const fact = {
+    id: 1,
+    text: "Fact 1",
+    category: "technology",
+    votesFalse: 4,
+  };
+  const setFacts = jest.fn();
+  render(<Fact fact={fact} setFacts={setFacts} />);
+
+  const voteButton = screen.getByText(/⛔️ 4/i);
   fireEvent.click(voteButton);
   // Assert the vote handling logic here
 });
