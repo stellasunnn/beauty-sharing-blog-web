@@ -11,11 +11,11 @@ import CategoryFilter from "../src/CategoryFilter";
 import FactList from "../src/FactList";
 import Fact from "../src/Fact";
 import Loader from "../src/Loader";
-import supabase from '../src/supabase';
+import supabase from "../src/supabase";
 
-describe('Supabase Tests', () => {
-  it('Should connect to Supabase and fetch data', async () => {
-    const { data, error } = await supabase.from('facts').select('*');
+describe("Supabase Tests", () => {
+  it("Should connect to Supabase and fetch data", async () => {
+    const { data, error } = await supabase.from("facts").select("*");
 
     expect(error).toBeNull();
     expect(data).toBeDefined();
@@ -43,8 +43,6 @@ test("form submission with valid inputs", () => {
   fireEvent.change(input, { target: { value: "New fact" } });
   const button = screen.getByText(/Post/i);
   fireEvent.click(button);
-
-  // Add assertions related to form submission here
 });
 
 test("category filter buttons render and are clickable", () => {
@@ -75,7 +73,6 @@ test("renders fact and handles votesInteresting", () => {
 
   const voteButton = screen.getByText(/👍 10/i);
   fireEvent.click(voteButton);
-  // Assert the vote handling logic here
 });
 
 test("renders fact and handles votesMindblowing", () => {
@@ -90,7 +87,6 @@ test("renders fact and handles votesMindblowing", () => {
 
   const voteButton = screen.getByText(/🤯 19/i);
   fireEvent.click(voteButton);
-  // Assert the vote handling logic here
 });
 
 test("renders fact and handles votesFalse", () => {
@@ -105,7 +101,6 @@ test("renders fact and handles votesFalse", () => {
 
   const voteButton = screen.getByText(/⛔️ 4/i);
   fireEvent.click(voteButton);
-  // Assert the vote handling logic here
 });
 
 test("renders loading message", () => {
