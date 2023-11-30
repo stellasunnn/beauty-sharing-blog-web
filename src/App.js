@@ -6,6 +6,7 @@ import FactList from "./FactList";
 import Loader from "./Loader";
 import supabase from "./supabase";
 import "./style.css";
+import WordCloud from "./WordCloud";
 
 function App() {
   const [showForm, setShowForm] = useState(false);
@@ -38,12 +39,14 @@ function App() {
 
       <main className="main">
         <CategoryFilter setCurrentCategory={setCurrentCategory} />
+
         {isLoading ? (
           <Loader />
         ) : (
           <FactList facts={facts} setFacts={setFacts} />
         )}
       </main>
+      <WordCloud />
     </>
   );
 }
