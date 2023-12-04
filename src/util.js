@@ -1,12 +1,12 @@
 export const CATEGORIES = [
-  { name: "technology", color: "#3b82f6" },
-  { name: "science", color: "#16a34a" },
-  { name: "finance", color: "#ef4444" },
-  { name: "society", color: "#eab308" },
-  { name: "entertainment", color: "#db2777" },
-  { name: "health", color: "#14b8a6" },
-  { name: "history", color: "#f97316" },
-  { name: "news", color: "#8b5cf6" },
+  { name: "skincare", color: "#e3a04f" },
+  { name: "eyes", color: "#b8d38f" },
+  { name: "face", color: "#e96d29" },
+  { name: "lips", color: "#eab308" },
+  { name: "brushes", color: "#ef5767" },
+  { name: "fragrance", color: "#14b8a6" },
+  { name: "nails", color: "#ff9b6a" },
+  { name: "gift sets", color: "#d08a8a" },
 ];
 
 export function isValidHttpUrl(string) {

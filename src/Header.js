@@ -13,7 +13,7 @@ function Header({ showForm, setShowForm }) {
         className="btn btn-large btn-open"
         onClick={() => setShowForm((show) => !show)}
       >
-        {showForm ? "Close" : "Share a fact"}
+        {showForm ? "Close" : "Share your favorite!"}
       </button>
     </header>
   );

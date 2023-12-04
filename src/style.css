@@ -5,8 +5,8 @@
 }
 
 body {
-  background-color: #292524;
-  color: lightpink;
+  background-color: #272429;
+  color: rgb(242, 210, 215);
   font-family: "Sono", sans-serif;
   padding: 48px 64px;
 }
@@ -194,11 +194,20 @@ ul {
 .btn-all-categories {
   margin-bottom: 16px;
   width: 100%;
+  position: relative;
 }
 
 .btn-category {
   width: 100%;
   background-image: none;
+}
+
+.btn-behind {
+  position: absolute;
+  width: 100%;
+  background-image: none;
+  top: 0;
+  left: 0;
 }
 
 /* FORM */
