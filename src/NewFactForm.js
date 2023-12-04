@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CATEGORIES, isValidHttpUrl } from "./util";
-import supabase from "./supabase";
+import { supabase, authenticateUser, createUser } from './supabase';
 import { Fact } from "./Fact";
 
 function NewFactForm({ setFacts, setShowForm }) {
@@ -11,23 +11,41 @@ function NewFactForm({ setFacts, setShowForm }) {
   const [isUploading, setIsUploading] = useState(false);
   const textLength = text.length;
 
+  // Check if user is authenticated before accessing session
+  // const { user } = supabase.auth.getUser();
+
+  
+
   async function handleSubmit(e) {
     // 1. Prevent browser reload
     e.preventDefault();
-    console.log(text, source, category);
+
+
+  // 2. Check if the user is authenticated
+    const { data: { user } } = await supabase.auth.getUser();
 
     // 2. Check if data is valid. If so, create a new fact
     if (text && isValidHttpUrl(source) && category && textLength <= 200) {
       // 3. Upload fact to Supabase and receive the new fact object
       setIsUploading(true);
+
+    try {
+      // Upload fact to Supabase and receive the new fact object
       const { data: newFact, error } = await supabase
         .from("facts")
-        .insert([{ text, source, category }])
+        .insert([{ text, source, category, user_id: user.id }])
         .select();
-      setIsUploading(false);
-
-      // 4. Add the new fact to the UI: add the fact to state
-      if (!error) setFacts((facts) => [newFact[0], ...facts]);
+        setIsUploading(false);
+      if (error) {
+        console.error('Error inserting new fact:', error);
+      } else {
+        console.log('New fact added:', newFact);
+        // Add the new fact to the UI: add the fact to state
+        setFacts((facts) => [newFact[0], ...facts]);
+      }
+    } catch (error) {
+      console.error('An unexpected error occurred:', error);
+    }
 
       // 5. Reset input fields
       setText("");

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CATEGORIES } from "./util";
-import supabase from "./supabase";
+import { supabase, authenticateUser, createUser } from './supabase';
 
 function Fact({ fact, setFacts }) {
   const [isUpdating, setIsUpdating] = useState(false);
@@ -38,8 +38,7 @@ function Fact({ fact, setFacts }) {
       <span
         className="tag"
         style={{
-          backgroundColor: CATEGORIES.find((cat) => cat.name === fact.category)
-            .color,
+          backgroundColor: CATEGORIES.find((cat) => cat.name === fact.category)?.color || 'defaultColor',
         }}>
         {fact.category}
       </span>

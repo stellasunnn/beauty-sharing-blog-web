@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Header from "./Header";
 import NewFactForm from "./NewFactForm";
 import CategoryFilter from "./CategoryFilter";
 import FactList from "./FactList";
 import Loader from "./Loader";
-import supabase from "./supabase";
+import LoginComponent from "./Login"; 
+import Profile from './Profile';
+import { supabase, authenticateUser, createUser } from './supabase';
 import "./style.css";
+
 import WordCloud from "./WordCloud";
 
 function App() {
@@ -13,8 +17,10 @@ function App() {
   const [facts, setFacts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [currentCategory, setCurrentCategory] = useState("all");
+  const [isLoggedIn, setLoggedIn] = React.useState(false);
+  
 
-  useEffect(() => {
+  React.useEffect(() => {
     async function getFacts() {
       setIsLoading(true);
       let query = supabase.from("facts").select("*");
@@ -30,25 +36,44 @@ function App() {
     getFacts();
   }, [currentCategory]);
 
+    const handleLogin = () => {
+    setLoggedIn(true);
+    };
+
   return (
-    <>
-      <Header showForm={showForm} setShowForm={setShowForm} />
-      {showForm ? (
-        <NewFactForm setFacts={setFacts} setShowForm={setShowForm} />
-      ) : null}
+    <Router>
+      <div>
+        <Header showForm={showForm} setShowForm={setShowForm} />
+        {showForm ? <NewFactForm setFacts={setFacts} setShowForm={setShowForm} /> : null}
 
-      <main className="main">
-        <CategoryFilter setCurrentCategory={setCurrentCategory} />
-
-        {isLoading ? (
-          <Loader />
-        ) : (
-          <FactList facts={facts} setFacts={setFacts} />
-        )}
-      </main>
-      <WordCloud />
-    </>
+        
+        <Routes>
+          <Route path="/login" element={<LoginComponent onLogin={handleLogin} />} />
+          <Route path="/" element={isLoggedIn ? <AppContent {...{ showForm, setShowForm, facts, setFacts, isLoading, currentCategory, setCurrentCategory }} /> : <Navigate to="/login" />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
+
+// AppContent is a separate component to avoid rendering logic clutter in App.js
+const AppContent = ({
+  showForm,
+  setShowForm,
+  facts,
+  setFacts,
+  isLoading,
+  currentCategory,
+  setCurrentCategory,
+}) => {
+  return (
+    <main className="main">
+      {/* Your existing components go here */}
+      <CategoryFilter setCurrentCategory={setCurrentCategory} />
+      {isLoading ? <Loader /> : <FactList facts={facts} setFacts={setFacts} />}
+    </main>
+  );
+};
 
 export default App;
