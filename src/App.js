@@ -69,9 +69,11 @@ const AppContent = ({
 }) => {
   return (
     <main className="main">
-      {/* Your existing components go here */}
       <CategoryFilter setCurrentCategory={setCurrentCategory} />
       {isLoading ? <Loader /> : <FactList facts={facts} setFacts={setFacts} />}
+      <div className="wordcloud-container">
+        <WordCloud />
+      </div>
     </main>
   );
 };

@@ -56,6 +56,16 @@ body {
   height: calc(100vh - 48px - 68px - 40px);
 }
 
+.wordcloud-container {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -200px;
+}
+
 @media (max-width: 900px) {
   .main {
     grid-template-columns: 1fr;

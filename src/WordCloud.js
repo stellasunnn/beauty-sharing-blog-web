@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as echarts from "echarts";
 import "echarts-wordcloud";
-import supabase from "./supabase";
+import { supabase } from "./supabase";
 
 function WordCloud() {
   const [wordCloudData, setWordCloudData] = useState([]);
