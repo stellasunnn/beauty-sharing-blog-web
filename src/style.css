@@ -81,6 +81,7 @@ section {
 
 .logo {
   /* background-color: blue; */
+  background: transparent;
   display: flex;
   align-items: center;
   gap: 16px;
@@ -204,7 +205,6 @@ ul {
 .btn-all-categories {
   margin-bottom: 16px;
   width: 100%;
-  position: relative;
 }
 
 .btn-category {
@@ -212,16 +212,30 @@ ul {
   background-image: none;
 }
 
-.btn-behind {
-  position: absolute;
-  width: 100%;
-  background-image: none;
-  top: 0;
-  left: 0;
+.nav-list {
+  display: flex;
+  list-style: none;
+}
+
+.nav-list li {
+  margin-right: 16px; /* Adjust as needed for spacing between links */
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #fff; /* Set the color of the text */
+  padding: 8px 16px;
+  background-color: #f8b6c1; /* Set the light pink background color */
+  border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+.nav-list a:hover {
+  background-color: #ff8096; /* Set a different color on hover if desired */
 }
 
 /* FORM */
 .fact-form {
+  position: relative;
   background-color: #44403c;
   margin-bottom: 40px;
   padding: 16px, 32px;
