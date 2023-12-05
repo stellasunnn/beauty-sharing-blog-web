@@ -5,12 +5,7 @@ function Header({ showForm, setShowForm }) {
   const appTitle = "Share and Rate!";
   return (
     <header className="header">
-      {/* <div className="logo">
-        <img src="logo.png" height="68" width="68" alt="Today I Learned Logo" />
-        <h1>{appTitle}</h1>
-      </div> */}
-
-        <div className="logo">
+      <div className="logo">
         {/* Use Link to navigate to the profile page */}
         <Link to="/profile">
           <img
@@ -22,6 +17,18 @@ function Header({ showForm, setShowForm }) {
         </Link>
         <h1>{appTitle}</h1>
       </div>
+
+      <nav>
+        <ul className="nav-list">
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/wordcloud">WordCloud</Link>
+          </li>
+          {/* Add other navigation items as needed */}
+        </ul>
+      </nav>
 
       <button
         className="btn btn-large btn-open"

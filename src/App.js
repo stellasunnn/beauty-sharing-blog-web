@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Header from "./Header";
 import NewFactForm from "./NewFactForm";
 import CategoryFilter from "./CategoryFilter";
 import FactList from "./FactList";
 import Loader from "./Loader";
-import LoginComponent from "./Login"; 
-import Profile from './Profile';
-import { supabase, authenticateUser, createUser } from './supabase';
+import LoginComponent from "./Login";
+import Profile from "./Profile";
+import { supabase, authenticateUser, createUser } from "./supabase";
 import "./style.css";
 
 import WordCloud from "./WordCloud";
@@ -18,7 +23,6 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [currentCategory, setCurrentCategory] = useState("all");
   const [isLoggedIn, setLoggedIn] = React.useState(false);
-  
 
   React.useEffect(() => {
     async function getFacts() {
@@ -36,20 +40,44 @@ function App() {
     getFacts();
   }, [currentCategory]);
 
-    const handleLogin = () => {
+  const handleLogin = () => {
     setLoggedIn(true);
-    };
+  };
 
   return (
     <Router>
       <div>
         <Header showForm={showForm} setShowForm={setShowForm} />
-        {showForm ? <NewFactForm setFacts={setFacts} setShowForm={setShowForm} /> : null}
+        {showForm ? (
+          <NewFactForm setFacts={setFacts} setShowForm={setShowForm} />
+        ) : null}
 
-        
         <Routes>
-          <Route path="/login" element={<LoginComponent onLogin={handleLogin} />} />
-          <Route path="/" element={isLoggedIn ? <AppContent {...{ showForm, setShowForm, facts, setFacts, isLoading, currentCategory, setCurrentCategory }} /> : <Navigate to="/login" />} />
+          <Route
+            path="/login"
+            element={<LoginComponent onLogin={handleLogin} />}
+          />
+          <Route
+            path="/"
+            element={
+              isLoggedIn ? (
+                <AppContent
+                  {...{
+                    showForm,
+                    setShowForm,
+                    facts,
+                    setFacts,
+                    isLoading,
+                    currentCategory,
+                    setCurrentCategory,
+                  }}
+                />
+              ) : (
+                <Navigate to="/login" />
+              )
+            }
+          />
+          <Route path="/wordcloud" element={<WordCloud />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
@@ -71,9 +99,7 @@ const AppContent = ({
     <main className="main">
       <CategoryFilter setCurrentCategory={setCurrentCategory} />
       {isLoading ? <Loader /> : <FactList facts={facts} setFacts={setFacts} />}
-      <div className="wordcloud-container">
-        <WordCloud />
-      </div>
+      <div className="wordcloud-container"></div>
     </main>
   );
 };
