@@ -5,8 +5,8 @@
 }
 
 body {
-  background-color: #272429;
-  color: rgb(242, 210, 215);
+  background-color: rgb(255, 149, 197);
+  color: rgb(250, 223, 255);
   font-family: "Sono", sans-serif;
   padding: 48px 64px;
 }
@@ -42,7 +42,7 @@ body {
 }
 
 .fact-form {
-  background-color: #44403c;
+  background-color: #851785;
   margin-bottom: 40px;
   padding: 16px, 40px;
   text-align: center;
@@ -108,7 +108,7 @@ h1 {
 .fact {
   font-size: 20px;
   line-height: 1.4;
-  background-color: #44403c;
+  background-color: rgb(204, 127, 160);
   margin-bottom: 16px;
   padding: 16px, 24px;
   letter-spacing: -1px;
@@ -159,7 +159,7 @@ h1 {
 }
 
 .vote-buttons button:hover {
-  background-color: #292524;
+  background-color: #4c4442;
 }
 
 ul {
@@ -168,7 +168,7 @@ ul {
 
 .source:link,
 .source:visited {
-  color: #a8a29e;
+  color: rgb(234, 140, 255);
   text-decoration: none;
   margin-left: 12px;
   transition: 0.3s;
@@ -176,7 +176,7 @@ ul {
 
 .source:hover,
 .source:active {
-  color: #3b82f6;
+  color: #922979;
 }
 
 .btn {
@@ -223,20 +223,21 @@ ul {
 
 .nav-list a {
   text-decoration: none;
+  font-family: "Coiny", sans-serif;
   color: #fff; /* Set the color of the text */
   padding: 8px 16px;
-  background-color: #f8b6c1; /* Set the light pink background color */
+  background-color: #f7b5e1; /* Set the light pink background color */
   border-radius: 8px; /* Optional: Add rounded corners */
 }
 
 .nav-list a:hover {
-  background-color: #ff8096; /* Set a different color on hover if desired */
+  background-color: #ff80db; /* Set a different color on hover if desired */
 }
 
 /* FORM */
 .fact-form {
   position: relative;
-  background-color: #44403c;
+  background-color: #f1b8f1;
   margin-bottom: 40px;
   padding: 16px, 32px;
   display: flex;

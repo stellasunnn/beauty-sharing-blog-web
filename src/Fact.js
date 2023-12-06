@@ -24,7 +24,7 @@ function Fact({ fact, setFacts }) {
 
   return (
     <li className="fact">
-      <p>
+      <p style={{ marginLeft: '5px' }}>
         {isDisputed ? <span className="disputed">[⛔️ DISPUTED]</span> : null}
         {fact.text}
         <a

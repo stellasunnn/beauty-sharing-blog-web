@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Header({ showForm, setShowForm }) {
-  const appTitle = "Share and Rate!";
+  const appTitle = "Girlie's beauty community💅";
   return (
     <header className="header">
       <div className="logo">

@@ -33,8 +33,8 @@ test("renders header with title and button", () => {
     </BrowserRouter>
   );
 
-  expect(screen.getByText(/Share And Rate/i)).toBeInTheDocument();
-  fireEvent.click(screen.getByText(/Share And Rate/i));
+  expect(screen.getByText(/Girlie's beauty community💅/i)).toBeInTheDocument();
+  fireEvent.click(screen.getByText(/Girlie's beauty community💅/i));
 });
 
 test("form submission with valid inputs", () => {
