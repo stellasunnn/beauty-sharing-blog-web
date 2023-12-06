@@ -1,10 +1,10 @@
-Project Name
+# Project Name
 SHARE AND RATE!
 ![image](https://github.com/dcmxlucky/CS5500Group3/assets/113505407/d91d3675-8e0d-4c1f-a7c2-5ba30adbf55b)
 
 You can share and find anything about makeup products and discount information here!
 
-Features
+# Features
 1.register
 2.login
 3.wordCloud
