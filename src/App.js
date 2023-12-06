@@ -11,6 +11,7 @@ import CategoryFilter from "./CategoryFilter";
 import FactList from "./FactList";
 import Loader from "./Loader";
 import LoginComponent from "./Login";
+import RegisterComponent from "./register";
 import Profile from "./Profile";
 import { supabase, authenticateUser, createUser } from "./supabase";
 import "./style.css";
@@ -56,6 +57,10 @@ function App() {
           <Route
             path="/login"
             element={<LoginComponent onLogin={handleLogin} />}
+          />
+          <Route
+            path="/register"
+            element={<RegisterComponent onRegister={handleLogin} />}
           />
           <Route
             path="/"

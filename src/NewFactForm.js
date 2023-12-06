@@ -17,17 +17,32 @@ function NewFactForm({ setFacts, setShowForm }) {
   
 
   async function handleSubmit(e) {
-    // 1. Prevent browser reload
+  // 1. Prevent browser reload
     e.preventDefault();
 
 
-  // 2. Check if the user is authenticated
-    const { data: { user } } = await supabase.auth.getUser();
+  // Check if the user is authenticated
+  const { data: { user } } = await supabase.auth.getUser();
 
-    // 2. Check if data is valid. If so, create a new fact
-    if (text && isValidHttpUrl(source) && category && textLength <= 200) {
+  // Check if data is valid. If so, create a new fact
+  if (text && isValidHttpUrl(source) && category && textLength <= 200) {
+
+    // Check if the user is present
+    // if (!user) {
+    //   // Display a message or notification to inform the user to log in
+    //   alert('Please log in before posting a fact.');
+    //   return;
+    // }
+
+    // Check if the user's account is confirmed
+    if (user.confirmed_at === null) {
+      // Display a message or notification to remind the user to confirm their account
+      alert('Please confirm your account before posting a fact.');
+      return;
+    }
       // 3. Upload fact to Supabase and receive the new fact object
       setIsUploading(true);
+
 
     try {
       // Upload fact to Supabase and receive the new fact object
