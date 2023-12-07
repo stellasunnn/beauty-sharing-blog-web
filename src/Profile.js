@@ -3,9 +3,11 @@
 import React, { useEffect, useState } from "react";
 import { supabase } from './supabase';
 import Fact from './Fact';  // Import your Fact component
+import { useNavigate } from 'react-router-dom';
 
 function Profile() {
   const [userFacts, setUserFacts] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch facts associated with the authenticated user
@@ -22,11 +24,14 @@ function Profile() {
         } else {
           console.error('Error fetching user facts:', error);
         }
+      } else {
+        // If user is not authenticated, redirect to the login page
+        navigate('/login');
       }
     }
 
     fetchUserFacts();
-  }, []);
+  }, [navigate]);
 
   return (
     <div>

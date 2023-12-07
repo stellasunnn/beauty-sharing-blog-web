@@ -48,7 +48,7 @@ function App() {
   return (
     <Router>
       <div>
-        <Header showForm={showForm} setShowForm={setShowForm} />
+        <Header showForm={showForm} setShowForm={setShowForm} isLoggedIn={isLoggedIn} />
         {showForm ? (
           <NewFactForm setFacts={setFacts} setShowForm={setShowForm} />
         ) : null}
@@ -62,28 +62,36 @@ function App() {
             path="/register"
             element={<RegisterComponent onRegister={handleLogin} />}
           />
-          <Route
-            path="/"
-            element={
-              isLoggedIn ? (
-                <AppContent
-                  {...{
-                    showForm,
-                    setShowForm,
-                    facts,
-                    setFacts,
-                    isLoading,
-                    currentCategory,
-                    setCurrentCategory,
-                  }}
-                />
-              ) : (
-                <Navigate to="/login" />
-              )
-            }
-          />
+          {isLoggedIn ? (
+            <>
+              <Route
+                path="/profile"
+                element={<Profile />}
+              />
+              <Route
+                path="/"
+                element={
+                  <AppContent
+                    {...{
+                      showForm,
+                      setShowForm,
+                      facts,
+                      setFacts,
+                      isLoading,
+                      currentCategory,
+                      setCurrentCategory,
+                    }}
+                  />
+                }
+              />
+            </>
+          ) : (
+            <Route
+              path="/"
+              element={<Navigate to="/login" />}
+            />
+          )}
           <Route path="/wordcloud" element={<WordCloud />} />
-          <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
     </Router>
