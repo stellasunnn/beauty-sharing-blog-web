@@ -1,11 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-function Header({ showForm, setShowForm }) {
+function Header({ showForm, setShowForm, isLoggedIn }) {
+  const navigate = useNavigate();
   const appTitle = "Girlie's beauty community💅";
+
+  const handleLogoClick = () => {
+    // If the user is logged in, navigate to the profile page
+    if (isLoggedIn) {
+      navigate('/profile');
+    } else {
+      // If not logged in, navigate to the login page
+      navigate('/login');
+    }
+  };
+  
   return (
     <header className="header">
-      <div className="logo">
+      <div className="logo" onClick={handleLogoClick}>
         {/* Use Link to navigate to the profile page */}
         <Link to="/profile">
           <img
