@@ -2,7 +2,7 @@
 
 A community-driven platform for makeup enthusiasts to discover, share, and vote on beauty products and deals.
 
-![SHARE AND RATE Interface](screenshot.png)
+![image](https://github.com/dcmxlucky/CS5500Group3/assets/113505407/d91d3675-8e0d-4c1f-a7c2-5ba30adbf55b)
 
 ## About
 
