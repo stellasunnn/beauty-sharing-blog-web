@@ -1,36 +1,83 @@
-# Project Name
-SHARE AND RATE!
-![image](https://github.com/dcmxlucky/CS5500Group3/assets/113505407/d91d3675-8e0d-4c1f-a7c2-5ba30adbf55b)
+# SHARE AND RATE!
 
-You can share and find anything about makeup products and discount information here!
+A community-driven platform for makeup enthusiasts to discover, share, and vote on beauty products and deals.
 
-# Features
-1.register
-2.login
-3.wordCloud
-4.create new posts
-5.Browse posts
-6.vote for notes
+![SHARE AND RATE Interface](screenshot.png)
 
+## About
 
-Getting Started
-Explain how to set up and run your project. Include any dependencies and steps needed to get the project up and running.
+SHARE AND RATE! is a web application where makeup lovers can connect, share their favorite beauty products, and discover deals and discounts. Our platform makes it easy to find honest reviews and recommendations from fellow beauty enthusiasts.
 
-Prerequisites
-List any software or tools that users need to have installed before they can use your project.
+## Features
 
-Installation
-Provide step-by-step instructions on how to install your project.
+- **User Authentication** - Create an account and securely log in
+- **WordCloud Navigation** - Discover trending topics and categories through an interactive word cloud
+- **Post Creation** - Share your favorite makeup products, reviews, and discount information
+- **Content Discovery** - Browse posts from other users to find new products and deals
+- **Voting System** - Vote for helpful reviews and product recommendations
+- **Responsive Design** - Enjoy a seamless experience on both desktop and mobile devices
 
-bash
-Copy code
-# Example installation steps
+## Getting Started
+
+These instructions will help you set up and run a local copy of SHARE AND RATE! for development and testing purposes.
+
+### Prerequisites
+
+To run this project, you'll need:
+
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+- Modern web browser (Chrome, Firefox, Safari, Edge)
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/share-and-rate.git
+cd share-and-rate
+```
+
+2. Install dependencies
+```bash
 npm install
-Usage
-Explain how users can use your project. Include code examples or a quick-start guide.
+```
 
-bash
-Copy code
-# Example usage command
+3. Configure environment variables
+   - Create a `.env` file in the root directory
+   - Add the following variables (replace with your own values):
+   ```
+   API_KEY=your_api_key
+   AUTH_DOMAIN=your_auth_domain
+   DATABASE_URL=your_database_url
+   ```
+
+4. Start the development server
+```bash
+npm run start
+```
+
+## Usage
+
+After installation, navigate to `http://localhost:3000` in your browser to see the application.
+
+### Basic Commands
+
+```bash
+# Start development server
 npm run start
 
+# Build for production
+npm run build
+
+# Run tests
+npm run test
+```
+
+
+## Technologies Used
+
+- **Frontend**: JavaScript, HTML, CSS
+- **Package Management**: npm
+- **Authentication**: Firebase Auth (or custom authentication)
+- **State Management**: Context API / Redux
+- **Styling**: CSS / SCSS / Styled Components
